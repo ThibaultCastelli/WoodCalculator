@@ -7,7 +7,6 @@ C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\bin\Debug\net
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\bin\Debug\netcoreapp3.1\WoodCalculatorLibrary.dll
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\bin\Debug\netcoreapp3.1\WoodCalculatorLibrary.pdb
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.csprojAssemblyReference.cache
-C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.Form1.resources
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.csproj.GenerateResource.cache
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.AssemblyInfoInputs.cache
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.AssemblyInfo.cs
@@ -16,3 +15,6 @@ C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\net
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.dll
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.pdb
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.genruntimeconfig.cache
+C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.MainMenuForm.resources
+C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.Properties.Resources.resources
+C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.EssenceEditForm.resources
