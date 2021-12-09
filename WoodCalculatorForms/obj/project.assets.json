@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "WoodCalculatorLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/WoodCalculatorLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WoodCalculatorLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "WoodCalculatorLibrary/1.0.0": {
+      "type": "project",
+      "path": "../WoodCalculatorLibrary/WoodCalculatorLibrary.csproj",
+      "msbuildProject": "../WoodCalculatorLibrary/WoodCalculatorLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "WoodCalculatorLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\thiba\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\thiba\\Documents\\GitHub\\WoodCalculator\\WoodCalculatorLibrary\\WoodCalculatorLibrary.csproj": {
+              "projectPath": "C:\\Users\\thiba\\Documents\\GitHub\\WoodCalculator\\WoodCalculatorLibrary\\WoodCalculatorLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

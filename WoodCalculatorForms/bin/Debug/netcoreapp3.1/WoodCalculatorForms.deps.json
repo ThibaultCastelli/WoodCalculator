@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WoodCalculatorForms/1.0.0": {
+        "dependencies": {
+          "WoodCalculatorLibrary": "1.0.0"
+        },
+        "runtime": {
+          "WoodCalculatorForms.dll": {}
+        }
+      },
+      "WoodCalculatorLibrary/1.0.0": {
+        "runtime": {
+          "WoodCalculatorLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WoodCalculatorForms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WoodCalculatorLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

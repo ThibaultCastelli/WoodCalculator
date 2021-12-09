@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WoodCalculatorLibrary;
 
 namespace WoodCalculatorForms
 {
@@ -14,6 +15,8 @@ namespace WoodCalculatorForms
         [STAThread]
         static void Main()
         {
+            GlobalConfig.InitializeConnection(ConnectionType.Text);
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
