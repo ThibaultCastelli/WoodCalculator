@@ -7,15 +7,15 @@ namespace WoodCalculatorLibrary.Data
 {
     public interface IDataConnection
     {
-        void SaveEssence(EssenceModel model);
-        void DeleteEssence(EssenceModel model);
+        void SaveEssence(EssenceModel essence);
+        void DeleteEssence(EssenceModel essence);
         List<EssenceModel> GetEssenceAll();
 
-        void SaveWood(WoodModel model);
+        void SaveWood(WoodModel wood);
         List<WoodModel> GetWoodAll();
 
-        void SaveProject(ProjectModel model);
-        void DeleteProject(ProjectModel model);
+        void SaveProject(ProjectModel project);
+        void DeleteProject(ProjectModel project);
         List<ProjectModel> GetProjectAll();
     }
 }

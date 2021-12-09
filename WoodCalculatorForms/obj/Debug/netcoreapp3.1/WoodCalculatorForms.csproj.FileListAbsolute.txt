@@ -18,3 +18,4 @@ C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\net
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.MainMenuForm.resources
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.Properties.Resources.resources
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.EssenceEditForm.resources
+C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorForms\obj\Debug\netcoreapp3.1\WoodCalculatorForms.InputBoardForm.resources

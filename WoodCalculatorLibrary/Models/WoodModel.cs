@@ -27,7 +27,7 @@ namespace WoodCalculatorLibrary.Models
         /// <summary>
         /// L'essence du ce bois.
         /// </summary>
-        public string Essence { get; set; }
+        public EssenceModel Essence { get; set; }
 
         /// <summary>
         /// La longueur du bois (en mm).

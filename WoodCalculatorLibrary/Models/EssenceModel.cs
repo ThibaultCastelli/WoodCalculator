@@ -18,5 +18,12 @@ namespace WoodCalculatorLibrary.Models
         /// Le nom de cette essence.
         /// </summary>
         public string Name { get; set; }
+
+        public EssenceModel() { }
+
+        public EssenceModel (string name)
+        {
+            Name = name;
+        }
     }
 }

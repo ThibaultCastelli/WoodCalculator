@@ -76,6 +76,7 @@ namespace WoodCalculatorForms
             this.AddBtn.TabIndex = 6;
             this.AddBtn.Text = "Ajouter l\'essence";
             this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // EssencesListBox
             // 
@@ -107,6 +108,7 @@ namespace WoodCalculatorForms
             this.DeleteEssenceBtn.TabIndex = 9;
             this.DeleteEssenceBtn.Text = "Retirer l\'essence séléctionnée";
             this.DeleteEssenceBtn.UseVisualStyleBackColor = false;
+            this.DeleteEssenceBtn.Click += new System.EventHandler(this.DeleteEssenceBtn_Click);
             // 
             // BackBtn
             // 
@@ -124,6 +126,7 @@ namespace WoodCalculatorForms
             this.BackBtn.TabIndex = 10;
             this.BackBtn.Text = "Retour";
             this.BackBtn.UseVisualStyleBackColor = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // EssenceEditForm
             // 
