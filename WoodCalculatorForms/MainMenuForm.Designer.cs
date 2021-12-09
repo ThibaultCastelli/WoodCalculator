@@ -70,6 +70,7 @@ namespace WoodCalculatorForms
             this.createProjectBtn.TabIndex = 4;
             this.createProjectBtn.Text = "Créer un Nouveau Projet";
             this.createProjectBtn.UseVisualStyleBackColor = false;
+            this.createProjectBtn.Click += new System.EventHandler(this.createProjectBtn_Click);
             // 
             // LoadProjectBtn
             // 
@@ -104,6 +105,7 @@ namespace WoodCalculatorForms
             this.editEssencesBtn.TabIndex = 6;
             this.editEssencesBtn.Text = "Editer les Essences";
             this.editEssencesBtn.UseVisualStyleBackColor = false;
+            this.editEssencesBtn.Click += new System.EventHandler(this.editEssencesBtn_Click);
             // 
             // projectsDropdown
             // 
