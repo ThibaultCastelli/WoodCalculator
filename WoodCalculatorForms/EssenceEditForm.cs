@@ -47,6 +47,8 @@ namespace WoodCalculatorForms
             PopulateListBox();
 
             GlobalConfig.connection.SaveEssence(newEssence);
+
+            EssenceNameTxtBox.Text = "";
         }
 
         private void DeleteEssenceBtn_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ namespace WoodCalculatorLibrary
     public static class GlobalConfig
     {
         public const string ProjectFile = "Projects.csv";
+        public const string WoodFile = "Woods.csv";
         public const string EssenceFile = "Essences.csv";
 
         public static IDataConnection connection;

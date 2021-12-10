@@ -12,23 +12,58 @@ namespace WoodCalculatorForms
 {
     public partial class MainMenuForm : Form
     {
+        List<ProjectModel> projects = new List<ProjectModel>();
+
         public MainMenuForm()
         {
             InitializeComponent();
+
+            WireUpDropdown();
+        }
+
+        private void WireUpDropdown()
+        {
+            projects = GlobalConfig.connection.GetProjectAll();
+
+            projectsDropdown.DataSource = null;
+            projectsDropdown.DataSource = projects;
+            projectsDropdown.DisplayMember = "Name";
         }
 
         private void createProjectBtn_Click(object sender, EventArgs e)
         {
+            ProjectModel emptyProject = new ProjectModel();
             List<WoodModel> emptyWoods = new List<WoodModel>();
-            emptyWoods.Add(new WoodModel());
 
-            InputBoardForm frm = new InputBoardForm(emptyWoods);
+            for(int i = 0; i < 10; i++)
+                emptyWoods.Add(new WoodModel());
+
+            emptyProject.Woods = emptyWoods;
+
+            InputBoardForm frm = new InputBoardForm(emptyProject);
+            frm.OnCloseForm += WireUpDropdown;
+            frm.Show();
+        }
+
+        private void LoadProjectBtn_Click(object sender, EventArgs e)
+        {
+            ProjectModel selectedProject = (ProjectModel)projectsDropdown.SelectedItem;
+
+            if (selectedProject == null)
+            {
+                MessageBox.Show("Il faut selectionner un projet.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            InputBoardForm frm = new InputBoardForm(selectedProject);
+            frm.OnCloseForm += WireUpDropdown;
             frm.Show();
         }
 
         private void editEssencesBtn_Click(object sender, EventArgs e)
         {
             FormCollection forms = Application.OpenForms;
+
             foreach (Form form in forms)
             {
                 if (form.Name == "EssenceEditForm")
@@ -38,5 +73,7 @@ namespace WoodCalculatorForms
             EssenceEditForm frm = new EssenceEditForm();
             frm.Show();
         }
+
+        
     }
 }

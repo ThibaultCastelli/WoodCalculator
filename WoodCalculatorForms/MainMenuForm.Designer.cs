@@ -88,6 +88,7 @@ namespace WoodCalculatorForms
             this.LoadProjectBtn.TabIndex = 5;
             this.LoadProjectBtn.Text = "Charger un Projet";
             this.LoadProjectBtn.UseVisualStyleBackColor = false;
+            this.LoadProjectBtn.Click += new System.EventHandler(this.LoadProjectBtn_Click);
             // 
             // editEssencesBtn
             // 

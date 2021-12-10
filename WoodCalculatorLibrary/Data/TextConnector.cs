@@ -21,7 +21,27 @@ namespace WoodCalculatorLibrary.Data
 
         public void DeleteProject(ProjectModel project)
         {
-            throw new NotImplementedException();
+            List<ProjectModel> projects = GlobalConfig.ProjectFile.FullFilePath().LoadFile().ConvertToProjectModel();
+
+            ProjectModel projectToRemove = projects.Where(x => x.Id == project.Id).FirstOrDefault();
+            projects.Remove(projectToRemove);
+
+            DeleteWoods(project.Woods);
+
+            projects.SaveToProjectFile();
+        }
+
+        private void DeleteWoods(List<WoodModel> woods)
+        {
+            List<WoodModel> savedWoods = GlobalConfig.WoodFile.FullFilePath().LoadFile().ConvertToWoodModel();
+
+            foreach (WoodModel wood in woods)
+            {
+                WoodModel woodToRemove = savedWoods.Where(x => x.Id == wood.Id).FirstOrDefault();
+                savedWoods.Remove(woodToRemove);
+            }
+
+            savedWoods.SaveToWoodFile();
         }
 
         public List<EssenceModel> GetEssenceAll()
@@ -31,12 +51,12 @@ namespace WoodCalculatorLibrary.Data
 
         public List<ProjectModel> GetProjectAll()
         {
-            throw new NotImplementedException();
+            return GlobalConfig.ProjectFile.FullFilePath().LoadFile().ConvertToProjectModel();
         }
 
         public List<WoodModel> GetWoodAll()
         {
-            throw new NotImplementedException();
+            return GlobalConfig.WoodFile.FullFilePath().LoadFile().ConvertToWoodModel();
         }
 
         public void SaveEssence(EssenceModel essence)
@@ -47,7 +67,7 @@ namespace WoodCalculatorLibrary.Data
             int currId = 1;
             if (essences.Count > 0)
             {
-                currId = essences.OrderByDescending(x => x.Id).First().Id;
+                currId = essences.OrderByDescending(x => x.Id).First().Id + 1;
             }
 
             essence.Id = currId;
@@ -58,12 +78,63 @@ namespace WoodCalculatorLibrary.Data
 
         public void SaveProject(ProjectModel project)
         {
-            throw new NotImplementedException();
+            SaveWood(project.Woods);
+
+            List<ProjectModel> projects = GlobalConfig.ProjectFile.FullFilePath().LoadFile().ConvertToProjectModel();
+
+            if (projects.Where(x => x.Name == project.Name).FirstOrDefault() != null)
+            {
+                project.Name += "(1)";
+            }
+
+            if (project.Id == 0)
+            {
+                // Find max ID
+                int currId = 1;
+                if (projects.Count > 0)
+                {
+                    currId = projects.OrderByDescending(x => x.Id).First().Id + 1;
+                }
+
+                project.Id = currId; 
+            }
+            else
+            {
+                projects.Remove(projects.Find(x => x.Id == project.Id));
+            }
+
+            projects.Add(project);
+
+            projects.SaveToProjectFile();
         }
 
-        public void SaveWood(WoodModel wood)
+        private void SaveWood(List<WoodModel> woods)
         {
-            throw new NotImplementedException();
+            List<WoodModel> savedWoods = GlobalConfig.WoodFile.FullFilePath().LoadFile().ConvertToWoodModel();
+
+            // Find max Id
+            int currId = 1;
+            if (savedWoods.Count > 0)
+            {
+                currId = savedWoods.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            foreach (WoodModel wood in woods)
+            {
+                if (wood.Id == 0)
+                {
+                    wood.Id = currId;
+                    currId++;
+                }
+                else
+                {
+                    savedWoods.Remove(savedWoods.Find(x => x.Id == wood.Id));
+                }
+                
+                savedWoods.Add(wood);
+            }
+
+            savedWoods.SaveToWoodFile();
         }
     }
 }

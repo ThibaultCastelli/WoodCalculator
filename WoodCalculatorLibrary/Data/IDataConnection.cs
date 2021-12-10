@@ -11,7 +11,6 @@ namespace WoodCalculatorLibrary.Data
         void DeleteEssence(EssenceModel essence);
         List<EssenceModel> GetEssenceAll();
 
-        void SaveWood(WoodModel wood);
         List<WoodModel> GetWoodAll();
 
         void SaveProject(ProjectModel project);
