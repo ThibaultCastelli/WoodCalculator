@@ -32,6 +32,19 @@ namespace WoodCalculatorForms
 
         private void createProjectBtn_Click(object sender, EventArgs e)
         {
+            if (CheckEssenceEditFormOpen())
+            {
+                MessageBox.Show("Il faut fermer la fenêtre d'édition des essences pour créer un nouveau projet.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Prevent from having two input forms open at the same time
+            Form inputBoardForm = GetInputBoardFormOpen();
+            if (inputBoardForm != null)
+            {
+                inputBoardForm.Close();
+            }
+
             ProjectModel emptyProject = new ProjectModel();
             List<WoodModel> emptyWoods = new List<WoodModel>();
 
@@ -47,6 +60,19 @@ namespace WoodCalculatorForms
 
         private void LoadProjectBtn_Click(object sender, EventArgs e)
         {
+            if (CheckEssenceEditFormOpen())
+            {
+                MessageBox.Show("Il faut fermer la fenêtre d'édition des essences pour charger un projet.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Prevent from having two input forms open at the same time
+            Form inputBoardForm = GetInputBoardFormOpen();
+            if (inputBoardForm != null)
+            {
+                inputBoardForm.Close();
+            }
+
             ProjectModel selectedProject = (ProjectModel)projectsDropdown.SelectedItem;
 
             if (selectedProject == null)
@@ -62,18 +88,37 @@ namespace WoodCalculatorForms
 
         private void editEssencesBtn_Click(object sender, EventArgs e)
         {
-            FormCollection forms = Application.OpenForms;
-
-            foreach (Form form in forms)
-            {
-                if (form.Name == "EssenceEditForm")
-                    return;
-            }
+            if (CheckEssenceEditFormOpen())
+                return;
 
             EssenceEditForm frm = new EssenceEditForm();
             frm.Show();
         }
 
-        
+        private bool CheckEssenceEditFormOpen()
+        {
+            FormCollection forms = Application.OpenForms;
+
+            foreach (Form form in forms)
+            {
+                if (form.Name == "EssenceEditForm")
+                    return true;
+            }
+
+            return false;
+        }
+
+        private Form GetInputBoardFormOpen()
+        {
+            FormCollection forms = Application.OpenForms;
+            
+            foreach (Form form in forms)
+            {
+                if (form.Name == "InputBoardForm")
+                    return form;
+            }
+
+            return null;
+        }
     }
 }

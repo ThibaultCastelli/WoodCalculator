@@ -11,7 +11,7 @@ namespace WoodCalculatorLibrary.Data
     {
         public static string FullFilePath(this string file)
         {
-            return Directory.GetCurrentDirectory() + "\\" + file;
+            return $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{GlobalConfig.DataDirectory}{file}";
         }
 
         public static List<string> LoadFile(this string file)

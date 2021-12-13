@@ -82,11 +82,6 @@ namespace WoodCalculatorLibrary.Data
 
             List<ProjectModel> projects = GlobalConfig.ProjectFile.FullFilePath().LoadFile().ConvertToProjectModel();
 
-            if (projects.Where(x => x.Name == project.Name).FirstOrDefault() != null)
-            {
-                project.Name += "(1)";
-            }
-
             if (project.Id == 0)
             {
                 // Find max ID

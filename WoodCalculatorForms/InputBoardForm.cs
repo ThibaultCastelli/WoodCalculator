@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -20,9 +22,13 @@ namespace WoodCalculatorForms
 
         List<EssenceModel> essences = new List<EssenceModel>();
 
+        List<EssenceVolumeModel> volumes = new List<EssenceVolumeModel>();
+        List<EssenceVolumeModel> emptyVolumes = new List<EssenceVolumeModel>();
+
         ProjectModel project;
 
-        bool hasSaved = false;
+        bool hasSaved;
+        bool hasChangedValues;
 
         public InputBoardForm(ProjectModel project)
         {
@@ -33,15 +39,21 @@ namespace WoodCalculatorForms
             woods = project.Woods;
             essences = GlobalConfig.connection.GetEssenceAll();
 
-            SetDataGridView();
+            SetInputDataGridView();
+            SetResultsDataGridView();
+
+            
 
             if (project.Name != null)
             {
                 ProjectNameTxtBox.Text = project.Name;
             }
+
+            hasSaved = false;
+            hasChangedValues = false;
         }
 
-        private void SetDataGridView()
+        private void SetInputDataGridView()
         {
             EssenceComboBox.DataSource = essences;
             EssenceComboBox.DisplayMember = "Name";
@@ -51,11 +63,19 @@ namespace WoodCalculatorForms
             WoodDataGridView.DataSource = woods;
         }
 
+        private void SetResultsDataGridView()
+        {
+            volumes = woods.CalculateVolume();
+
+            ResultsDataGridView.DataSource = emptyVolumes;
+            ResultsDataGridView.DataSource = volumes;
+        }
+
         private void AddRowBtn_Click(object sender, EventArgs e)
         {
             woods.Add(new WoodModel());
 
-            SetDataGridView();
+            SetInputDataGridView();
         }
 
         private void RemoveRowBtn_Click(object sender, EventArgs e)
@@ -71,7 +91,11 @@ namespace WoodCalculatorForms
             if (validDelete == DialogResult.Yes)
             {
                 woods.RemoveAt(WoodDataGridView.CurrentCell.RowIndex);
-                SetDataGridView();
+
+                SetInputDataGridView();
+                SetResultsDataGridView();
+
+                hasChangedValues = true;
             }
         }
 
@@ -104,6 +128,9 @@ namespace WoodCalculatorForms
                     woods[e.RowIndex].NbPieces = (int)WoodDataGridView.SelectedCells[0].Value;
                     break;
             }
+
+            hasChangedValues = true;
+            SetResultsDataGridView();
         }
 
         private void WoodDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -151,11 +178,26 @@ namespace WoodCalculatorForms
 
             project.Woods = woods;
             GlobalConfig.connection.SaveProject(project);
+
+            TakeScreenShot();
+        }
+
+        private void TakeScreenShot()
+        {
+            Rectangle bounds = Screen.GetBounds(Point.Empty);
+            using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+            {
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
+                }
+                bitmap.Save($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{GlobalConfig.ScreenShotsDirectory}{project.Name}.jpg", ImageFormat.Jpeg);
+            }
         }
 
         private void InputBoardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (!hasSaved)
+            if (!hasSaved && hasChangedValues)
             {
                 var validSave = MessageBox.Show("Voulez-vous sauvegarder avant de quitter ?", "Sauvegarder ?", MessageBoxButtons.YesNo);
                 
@@ -171,6 +213,7 @@ namespace WoodCalculatorForms
         private void EssenceNameTxtBox_TextChanged(object sender, EventArgs e)
         {
             project.Name = ProjectNameTxtBox.Text;
+            hasChangedValues = true;
         }
 
         private void EraseProjectBtn_Click(object sender, EventArgs e)
@@ -180,14 +223,15 @@ namespace WoodCalculatorForms
             if (validDelete == DialogResult.Yes)
             {
                 GlobalConfig.connection.DeleteProject(project);
+
+                if (File.Exists($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{GlobalConfig.ScreenShotsDirectory}{project.Name}.jpg"))
+                {
+                    File.Delete($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{GlobalConfig.ScreenShotsDirectory}{project.Name}.jpg");
+                }
+
                 hasSaved = true;
                 this.Close();
             }
-        }
-
-        private void CalculBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

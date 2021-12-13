@@ -16,6 +16,7 @@ namespace WoodCalculatorForms
         static void Main()
         {
             GlobalConfig.InitializeConnection(ConnectionType.Text);
+            GlobalConfig.CreateDataDirectory();
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

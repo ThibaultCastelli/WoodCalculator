@@ -1,4 +1,14 @@
-1,Buffet,Dessus,Erable,12,12,12,2
-2,Buffet,Dessous,Erable,12,12,12,3
-3,Table,Pieds,Chêne,4,2,5,4
-4,Table,Plan de travail,Noyer,55,55,19,1
+6,Caisson 1,Fond,Frêne,450,35,16,2
+7,Caisson 1,Montant,Frêne,650,35,16,2
+8,Caisson 1,Traverse,Frêne,440,30,16,2
+9,Caisson 1,Autre,Frêne,640,30,16,2
+10,Caisson 2,Fond,Fraké,335,25,16,2
+11,Caisson 2,Montant,Fraké,220,25,16,2
+12,Caisson 2,Traverse,Fraké,365,40,16,2
+13,Caisson 2,Autre,Fraké,252,40,16,2
+14,Caisson 3,Fond,Chêne,500,50,16,6
+15,Caisson 3,Montant,Chêne,700,50,16,6
+16,Caisson 3,Montant,Chêne,221,25,16,2
+17,Caisson 3,Traverse,Chêne,335,25,16,2
+18,Caisson 3,Traverse,Chêne,235,30,16,2
+19,Caisson 3,Autre,Chêne,345,30,16,2
