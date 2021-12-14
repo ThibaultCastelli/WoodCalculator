@@ -38,6 +38,7 @@ namespace WoodCalculatorLibrary
                     currVolume.Volume = decimal.Add(currVolume.Volume, wood.GetVolume());
                 }
 
+                currVolume.Volume = decimal.Round(currVolume.Volume, 4);
                 output.Add(currVolume);
             }
 

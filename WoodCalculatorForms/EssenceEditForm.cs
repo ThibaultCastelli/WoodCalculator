@@ -31,6 +31,11 @@ namespace WoodCalculatorForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            AddEssence();
+        }
+
+        private void AddEssence()
+        {
             if (EssenceNameTxtBox.Text.Length == 0)
             {
                 MessageBox.Show("Il faut donner un nom à l'essence avant de l'ajouter.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,6 +71,14 @@ namespace WoodCalculatorForms
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void EssenceNameTxtBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                AddEssence();
+            }
         }
     }
 }

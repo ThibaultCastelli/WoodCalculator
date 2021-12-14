@@ -332,7 +332,6 @@ namespace WoodCalculatorForms
             // 
             this.EssenceResultTxt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.EssenceResultTxt.DataPropertyName = "Essence";
-            this.EssenceResultTxt.FillWeight = 70F;
             this.EssenceResultTxt.HeaderText = "Essence";
             this.EssenceResultTxt.Name = "EssenceResultTxt";
             this.EssenceResultTxt.ReadOnly = true;

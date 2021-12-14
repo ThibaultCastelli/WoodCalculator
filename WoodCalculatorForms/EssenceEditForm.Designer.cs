@@ -47,6 +47,7 @@ namespace WoodCalculatorForms
             this.EssenceNameTxtBox.Name = "EssenceNameTxtBox";
             this.EssenceNameTxtBox.Size = new System.Drawing.Size(360, 52);
             this.EssenceNameTxtBox.TabIndex = 0;
+            this.EssenceNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EssenceNameTxtBox_KeyPress);
             // 
             // EssenceNameLabel
             // 
