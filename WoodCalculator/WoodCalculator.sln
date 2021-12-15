@@ -7,20 +7,24 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCalculatorLibrary", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCalculatorForms", "..\WoodCalculatorForms\WoodCalculatorForms.csproj", "{596EC9CF-8341-49D7-ACE7-027137D0D6FC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WoodCalculatorSetup", "WoodCalculatorSetup\WoodCalculatorSetup.vdproj", "{F8B0F766-606D-4A5D-874E-5920DED93CDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD276892-D3E4-42AA-A09C-ACA17B24D293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD276892-D3E4-42AA-A09C-ACA17B24D293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD276892-D3E4-42AA-A09C-ACA17B24D293}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{CD276892-D3E4-42AA-A09C-ACA17B24D293}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{CD276892-D3E4-42AA-A09C-ACA17B24D293}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD276892-D3E4-42AA-A09C-ACA17B24D293}.Release|Any CPU.Build.0 = Release|Any CPU
-		{596EC9CF-8341-49D7-ACE7-027137D0D6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{596EC9CF-8341-49D7-ACE7-027137D0D6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596EC9CF-8341-49D7-ACE7-027137D0D6FC}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{596EC9CF-8341-49D7-ACE7-027137D0D6FC}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{596EC9CF-8341-49D7-ACE7-027137D0D6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{596EC9CF-8341-49D7-ACE7-027137D0D6FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8B0F766-606D-4A5D-874E-5920DED93CDB}.Debug|Any CPU.ActiveCfg = Debug
+		{F8B0F766-606D-4A5D-874E-5920DED93CDB}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

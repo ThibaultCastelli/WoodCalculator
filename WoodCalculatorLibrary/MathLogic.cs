@@ -8,6 +8,24 @@ namespace WoodCalculatorLibrary
 {
     public static class MathLogic
     {
+        public static List<EssenceVolumeModel> Add30Percent(this List<EssenceVolumeModel> volumes)
+        {
+            List<EssenceVolumeModel> output = new List<EssenceVolumeModel>();
+            EssenceVolumeModel currVolume;
+
+            foreach (EssenceVolumeModel volume in volumes)
+            {
+                currVolume = new EssenceVolumeModel();
+                currVolume.Essence = volume.Essence;
+                currVolume.Volume = decimal.Multiply(volume.Volume, Convert.ToDecimal(1.30));
+                currVolume.Volume = decimal.Round(currVolume.Volume, 4);
+
+                output.Add(currVolume);
+            }
+
+            return output;
+        }
+
         public static List<EssenceVolumeModel> CalculateVolume(this List<WoodModel> woods)
         {
             List<EssenceVolumeModel> output = new List<EssenceVolumeModel>();

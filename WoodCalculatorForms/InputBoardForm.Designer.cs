@@ -37,6 +37,10 @@ namespace WoodCalculatorForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputBoardForm));
             this.ProjectNameLabel = new System.Windows.Forms.Label();
             this.ProjectNameTxtBox = new System.Windows.Forms.TextBox();
@@ -57,18 +61,23 @@ namespace WoodCalculatorForms
             this.ResultsDataGridView = new System.Windows.Forms.DataGridView();
             this.EssenceResultTxt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VolumeResultTxt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Results30PercentDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Volume30PercentLabel = new System.Windows.Forms.Label();
+            this.VolumeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.WoodDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Results30PercentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ProjectNameLabel
             // 
-            this.ProjectNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ProjectNameLabel.AutoSize = true;
             this.ProjectNameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ProjectNameLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.ProjectNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(222)))), ((int)(((byte)(167)))));
-            this.ProjectNameLabel.Location = new System.Drawing.Point(156, 658);
+            this.ProjectNameLabel.Location = new System.Drawing.Point(19, 9);
             this.ProjectNameLabel.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.ProjectNameLabel.Name = "ProjectNameLabel";
             this.ProjectNameLabel.Size = new System.Drawing.Size(198, 37);
@@ -77,13 +86,12 @@ namespace WoodCalculatorForms
             // 
             // ProjectNameTxtBox
             // 
-            this.ProjectNameTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ProjectNameTxtBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ProjectNameTxtBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ProjectNameTxtBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ProjectNameTxtBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ProjectNameTxtBox.Location = new System.Drawing.Point(360, 655);
+            this.ProjectNameTxtBox.Location = new System.Drawing.Point(223, 13);
             this.ProjectNameTxtBox.Name = "ProjectNameTxtBox";
-            this.ProjectNameTxtBox.Size = new System.Drawing.Size(360, 43);
+            this.ProjectNameTxtBox.Size = new System.Drawing.Size(360, 34);
             this.ProjectNameTxtBox.TabIndex = 3;
             this.ProjectNameTxtBox.TextChanged += new System.EventHandler(this.EssenceNameTxtBox_TextChanged);
             // 
@@ -162,7 +170,7 @@ namespace WoodCalculatorForms
             this.WoodDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.WoodDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.WoodDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.WoodDataGridView.Location = new System.Drawing.Point(19, 19);
+            this.WoodDataGridView.Location = new System.Drawing.Point(19, 68);
             this.WoodDataGridView.Margin = new System.Windows.Forms.Padding(10);
             this.WoodDataGridView.Name = "WoodDataGridView";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -175,7 +183,7 @@ namespace WoodCalculatorForms
             this.WoodDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.WoodDataGridView.RowHeadersWidth = 20;
             this.WoodDataGridView.RowTemplate.Height = 40;
-            this.WoodDataGridView.Size = new System.Drawing.Size(1055, 610);
+            this.WoodDataGridView.Size = new System.Drawing.Size(1002, 561);
             this.WoodDataGridView.TabIndex = 11;
             this.WoodDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.WoodDataGridView_CellValidating);
             this.WoodDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.WoodDataGridView_CellValueChanged);
@@ -284,8 +292,7 @@ namespace WoodCalculatorForms
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(135)))), ((int)(((byte)(78)))));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ResultsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.ResultsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResultsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ResultsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ResultsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -311,7 +318,7 @@ namespace WoodCalculatorForms
             this.ResultsDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
             this.ResultsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.ResultsDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ResultsDataGridView.Location = new System.Drawing.Point(1094, 19);
+            this.ResultsDataGridView.Location = new System.Drawing.Point(1041, 68);
             this.ResultsDataGridView.Margin = new System.Windows.Forms.Padding(10);
             this.ResultsDataGridView.Name = "ResultsDataGridView";
             this.ResultsDataGridView.ReadOnly = true;
@@ -325,7 +332,7 @@ namespace WoodCalculatorForms
             this.ResultsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.ResultsDataGridView.RowHeadersWidth = 20;
             this.ResultsDataGridView.RowTemplate.Height = 40;
-            this.ResultsDataGridView.Size = new System.Drawing.Size(271, 610);
+            this.ResultsDataGridView.Size = new System.Drawing.Size(324, 259);
             this.ResultsDataGridView.TabIndex = 15;
             // 
             // EssenceResultTxt
@@ -344,12 +351,101 @@ namespace WoodCalculatorForms
             this.VolumeResultTxt.Name = "VolumeResultTxt";
             this.VolumeResultTxt.ReadOnly = true;
             // 
+            // Results30PercentDataGridView
+            // 
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(135)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.Results30PercentDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.Results30PercentDataGridView.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Results30PercentDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.Results30PercentDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(222)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Results30PercentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.Results30PercentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Results30PercentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(222)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Results30PercentDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Results30PercentDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.Results30PercentDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.Results30PercentDataGridView.Location = new System.Drawing.Point(1041, 377);
+            this.Results30PercentDataGridView.Margin = new System.Windows.Forms.Padding(10);
+            this.Results30PercentDataGridView.Name = "Results30PercentDataGridView";
+            this.Results30PercentDataGridView.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Results30PercentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.Results30PercentDataGridView.RowHeadersWidth = 20;
+            this.Results30PercentDataGridView.RowTemplate.Height = 40;
+            this.Results30PercentDataGridView.Size = new System.Drawing.Size(324, 252);
+            this.Results30PercentDataGridView.TabIndex = 16;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Essence";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Essence";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Volume";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Volume";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // Volume30PercentLabel
+            // 
+            this.Volume30PercentLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Volume30PercentLabel.AutoSize = true;
+            this.Volume30PercentLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(222)))), ((int)(((byte)(167)))));
+            this.Volume30PercentLabel.Location = new System.Drawing.Point(1140, 337);
+            this.Volume30PercentLabel.Name = "Volume30PercentLabel";
+            this.Volume30PercentLabel.Size = new System.Drawing.Size(148, 30);
+            this.Volume30PercentLabel.TabIndex = 17;
+            this.Volume30PercentLabel.Text = "Volume + 30%";
+            // 
+            // VolumeLabel
+            // 
+            this.VolumeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.VolumeLabel.AutoSize = true;
+            this.VolumeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(222)))), ((int)(((byte)(167)))));
+            this.VolumeLabel.Location = new System.Drawing.Point(1172, 28);
+            this.VolumeLabel.Name = "VolumeLabel";
+            this.VolumeLabel.Size = new System.Drawing.Size(83, 30);
+            this.VolumeLabel.TabIndex = 18;
+            this.VolumeLabel.Text = "Volume";
+            // 
             // InputBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(1384, 721);
+            this.Controls.Add(this.VolumeLabel);
+            this.Controls.Add(this.Volume30PercentLabel);
+            this.Controls.Add(this.Results30PercentDataGridView);
             this.Controls.Add(this.ResultsDataGridView);
             this.Controls.Add(this.EraseProjectBtn);
             this.Controls.Add(this.SaveExitBtn);
@@ -366,8 +462,10 @@ namespace WoodCalculatorForms
             this.Text = "Feuille de Débit";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InputBoardForm_FormClosed);
+            this.Load += new System.EventHandler(this.InputBoardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.WoodDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Results30PercentDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,5 +492,10 @@ namespace WoodCalculatorForms
         private System.Windows.Forms.DataGridView ResultsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn EssenceResultTxt;
         private System.Windows.Forms.DataGridViewTextBoxColumn VolumeResultTxt;
+        private System.Windows.Forms.DataGridView Results30PercentDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label Volume30PercentLabel;
+        private System.Windows.Forms.Label VolumeLabel;
     }
 }

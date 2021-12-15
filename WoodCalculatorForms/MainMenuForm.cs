@@ -120,5 +120,14 @@ namespace WoodCalculatorForms
 
             return null;
         }
+
+        private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form inputBoardForm = GetInputBoardFormOpen();
+            if (inputBoardForm != null)
+            {
+                inputBoardForm.Close();
+            }
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace WoodCalculatorForms
         List<EssenceModel> essences = new List<EssenceModel>();
 
         List<EssenceVolumeModel> volumes = new List<EssenceVolumeModel>();
+        List<EssenceVolumeModel> volumes30Percent = new List<EssenceVolumeModel>();
         List<EssenceVolumeModel> emptyVolumes = new List<EssenceVolumeModel>();
 
         ProjectModel project;
@@ -41,8 +42,6 @@ namespace WoodCalculatorForms
 
             SetInputDataGridView();
             SetResultsDataGridView();
-
-            
 
             if (project.Name != null)
             {
@@ -66,9 +65,13 @@ namespace WoodCalculatorForms
         private void SetResultsDataGridView()
         {
             volumes = woods.CalculateVolume();
+            volumes30Percent = volumes.Add30Percent();
 
             ResultsDataGridView.DataSource = emptyVolumes;
             ResultsDataGridView.DataSource = volumes;
+
+            Results30PercentDataGridView.DataSource = emptyVolumes;
+            Results30PercentDataGridView.DataSource = volumes30Percent;
         }
 
         private void AddRowBtn_Click(object sender, EventArgs e)
@@ -232,6 +235,13 @@ namespace WoodCalculatorForms
                 hasSaved = true;
                 this.Close();
             }
+        }
+
+        private void InputBoardForm_Load(object sender, EventArgs e)
+        {
+            WoodDataGridView.CurrentCell.Selected = false;
+            ResultsDataGridView.CurrentCell.Selected = false;
+            Results30PercentDataGridView.CurrentCell.Selected = false;
         }
     }
 }

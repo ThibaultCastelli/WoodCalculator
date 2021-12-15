@@ -136,6 +136,7 @@ namespace WoodCalculatorForms
             this.MinimumSize = new System.Drawing.Size(819, 710);
             this.Name = "MainMenuForm";
             this.Text = "Wood Calculator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenuForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
