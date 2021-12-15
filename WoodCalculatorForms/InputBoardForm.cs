@@ -110,9 +110,17 @@ namespace WoodCalculatorForms
             switch (e.ColumnIndex)
             {
                 case 1:
+                    if (WoodDataGridView.SelectedCells[0].Value == null)
+                    {
+                        woods[e.RowIndex].NomMeuble = "";
+                    }
                     woods[e.RowIndex].NomMeuble = WoodDataGridView.SelectedCells[0].Value.ToString();
                     break;
                 case 2:
+                    if (WoodDataGridView.SelectedCells[0].Value == null)
+                    {
+                        woods[e.RowIndex].NomPiece = "";
+                    }
                     woods[e.RowIndex].NomPiece = WoodDataGridView.SelectedCells[0].Value.ToString();
                     break;
                 case 3:

@@ -6,3 +6,4 @@ C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorLibrary\obj\Debug\n
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorLibrary\obj\Debug\netcoreapp3.1\WoodCalculatorLibrary.csproj.CoreCompileInputs.cache
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorLibrary\obj\Debug\netcoreapp3.1\WoodCalculatorLibrary.dll
 C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorLibrary\obj\Debug\netcoreapp3.1\WoodCalculatorLibrary.pdb
+C:\Users\thiba\Documents\GitHub\WoodCalculator\WoodCalculatorLibrary\obj\Debug\netcoreapp3.1\WoodCalculatorLibrary.csprojAssemblyReference.cache
