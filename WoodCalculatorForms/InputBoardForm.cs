@@ -248,8 +248,15 @@ namespace WoodCalculatorForms
         private void InputBoardForm_Load(object sender, EventArgs e)
         {
             WoodDataGridView.CurrentCell.Selected = false;
-            ResultsDataGridView.CurrentCell.Selected = false;
-            Results30PercentDataGridView.CurrentCell.Selected = false;
+
+            if (ResultsDataGridView.CurrentCell != null)
+            {
+                ResultsDataGridView.CurrentCell.Selected = false;
+            }
+            if (Results30PercentDataGridView.CurrentCell != null)
+            {
+                Results30PercentDataGridView.CurrentCell.Selected = false;
+            }
         }
     }
 }
